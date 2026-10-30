@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MATRIX CALCULATOR</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <body>
+        <div class="bbs-layout">
+            <main class="terminal-main">
+                <div class="term-screen" id="term-screen">
+                    <pre class="ascii-banner">
+███╗   ███╗ █████╗ ████████╗██████╗ ██╗██╗  ██╗
+████╗ ████║██╔══██╗╚══██╔══╝██╔══██╗██║╚██╗██╔╝
+██╔████╔██║███████║   ██║   ██████╔╝██║ ╚███╔╝
+██║╚██╔╝██║██╔══██║   ██║   ██╔══██╗██║ ██╔██╗
+██║ ╚═╝ ██║██║  ██║   ██║   ██║  ██║██║██╔╝ ██╗
+╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝
+                    </pre>
+                    <div class="sys-info">
+                        <div>&gt; [СОСТОЯНИЕ] Терминал готов к вводу.</div>
+                    </div>
+                </div>
+
+                <div class="term-inputrow">
+                    <span class="term-prompt">\MATRIX&gt;</span>
+                    <input type="text" id="term-input" class="term-input"
+                           autocomplete="off" spellcheck="false"
+                           aria-label="Ввод выражения или команды" autofocus>
+                    <span class="term-cursor" aria-hidden="true">█</span>
+                </div>
+            </main>
+
+            <aside class="terminal-sidebar">
+                <div class="sidebar-section">
+                    <h2>[ПАМЯТКА]</h2>
+                    <ul>
+                        <li><strong>A = [[1, 2], [3, 4]]</strong> — создать матрицу</li>
+                        <li><strong>A @ B</strong> — умножить матрицы</li>
+                        <li><strong>det(A)</strong> — определитель</li>
+                        <li><strong>inv(A)</strong> — обратная</li>
+                        <li><strong>solve(A, [1, 2])</strong> — решить СЛАУ</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2>[ПЕРЕМЕННЫЕ]</h2>
+                    <ul id="var-list"><li class="empty">&lt;пусто&gt;</li></ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2>[ИСТОРИЯ]</h2>
+                    <ul id="hist-list"><li class="empty">&lt;пусто&gt;</li></ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2>[КОМАНДЫ]</h2>
+                    <ul id="cmd-list">
+                        <li><strong>:help</strong> — краткая справка <em>(F1)</em></li>
+                        <li><strong>:examples</strong> — полный справочник <em>(F2)</em></li>
+                        <li><strong>:commands</strong> — список команд <em>(F3)</em></li>
+                        <li><strong>:clear</strong> — очистить экран <em>(Esc)</em></li>
+                        <li><strong>:reset</strong> — сбросить сессию <em>(F5)</em></li>
+                        <li><strong>:stateful</strong> — сохранение переменных</li>
+                        <li><strong>:vars</strong> / <strong>:history</strong> — в терминал</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="site-footer">
+            Konstantin Sborshchikov | MATRIX CALCULATOR, CONST corp., 2026
+        </footer>
+
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    </body>
+</html>
